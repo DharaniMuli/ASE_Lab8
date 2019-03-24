@@ -19,6 +19,7 @@ app.post('/api/login', (req, res) =>{
     username: 'Dharani',
     email: 'dharanimuli559@gmail.com'
   }
+
   jwt.sign({user}, 'secretkey', (err, token)=>{
     res.json(token);
   });
@@ -35,7 +36,6 @@ app.get('/api/getDetails', verifyToken, (req, res) =>{
     });
 
 });
-
 
 function verifyToken(req, res, next) {
 
